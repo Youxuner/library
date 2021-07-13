@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <form #f="ngForm" (submit)="search(f)">
+    <div class="form-group row">
+      <label for="status" class="col-sm-1 col-form-label">Status: </label>
+      <input type="text" id="status" name="status" [ngModel] required>
+      <input type="submit" value="Search" [disabled]="f.invalid" class="btn btn-info mx-5">
+    </div>
+  </form>
+  <div class="row" *ngIf="toShow">
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>idLog</th>
+            <th>dataOra</th>
+            <th>URL Request</th>
+            <th>Http Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let log of logs">
+            <td>{{log.idLog}}</td>
+            <td>{{log.dataOra}}</td>
+            <td>{{log.urlrequest}}</td>
+            <td>{{log.httpStatus}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+    </div>
+  </div>
+</div>

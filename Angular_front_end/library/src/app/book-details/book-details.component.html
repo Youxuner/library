@@ -1,0 +1,60 @@
+<div class="container mt-5">
+  <!-- {{book | json}}
+  <br><br> -->
+  <form #f="ngForm" (submit)="updateBook(f)">
+    <div class="form-group row">
+      <label for="isbn" class="col-sm-2 col-form-label">Isbn</label>
+      <input type="text" name="isbn" [ngModel]="book.isbn" #isbn="ngModel" disabled>
+    </div>
+    <div class="form-group row">
+      <label for="titolo" class="col-sm-2 col-form-label">Titolo: </label>
+      <input type="text" id="titolo" name="titolo" [(ngModel)]="book.titolo"
+        #titolo="ngModel" required>
+      <div *ngIf="titolo.touched && titolo.dirty && titolo.invalid">
+        <p *ngIf="titolo.errors.required">Campo Titolo Obbligatorio.</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="descrizione" class="col-sm-2 col-form-label">Descrizione: </label>
+      <input type="text" id="descrizione" name="descrizione" [(ngModel)]="book.descrizione"
+        #descrizione="ngModel">
+    </div>
+    <div class="form-group row">
+      <label for="prezzo" class="col-sm-2 col-form-label">Prezzo: </label>
+      <input type="number" id="prezzo" name="prezzo" [(ngModel)]="book.prezzo"
+        #prezzo="ngModel" required>
+      <div *ngIf="prezzo.touched && prezzo.dirty && prezzo.invalid">
+        <p *ngIf="prezzo.errors.required">Campo Prezzo Obbligatorio.</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="nCopie" class="col-sm-2 col-form-label">nCopie: </label>
+      <input type="number" id="nCopie" name="nCopie" [(ngModel)]="book.nCopie"
+        #nCopie="ngModel" required>
+      <div *ngIf="nCopie.touched && nCopie.dirty && nCopie.invalid">
+        <p *ngIf="nCopie.errors.required">Campo nCopie Obbligatorio.</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="nCopie" class="col-sm-2 col-form-label">nCopie: </label>
+      <input type="number" id="nCopie" name="nCopie" [(ngModel)]="book.nCopie"
+        #nCopie="ngModel" required>
+      <div *ngIf="nCopie.touched && nCopie.dirty && nCopie.invalid">
+        <p *ngIf="nCopie.errors.required">Campo nCopie Obbligatorio.</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="categoria" class="col-sm-2 col-form-label">Categoria: </label>
+      <input type="text" id="categoria" name="categoria" [(ngModel)]="book.categoria"
+        #categoria="ngModel" required>
+      <div *ngIf="categoria.touched && categoria.dirty && categoria.invalid">
+        <p *ngIf="categoria.errors.required">Campo Categoria Obbligatorio.</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <input type="button" value="Indietro" [routerLink]="['/books']" class="btn btn-secondary mx-2">
+      <input type="submit" value="Update" [disabled]="f.invalid" class="btn btn-success  mx-2">
+      <button (click)="deleteBook($event)" class="btn btn-danger  mx-2">Elimina</button>
+    </div>
+  </form>
+</div>

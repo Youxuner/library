@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-md navbar-light justify-content-between border-bottom shadow-sm px-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="'.'">Root Component</a>
+    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  <div class="collapse navbar-collapse" [ngbCollapse]="isMenuCollapsed">
+    <div class="navbar-nav">
+      <a class="nav-link text-dark" aria-current="page" routerLink="/books">Books</a>
+      <a class="nav-link text-dark" routerLink="/authors">Authors</a>
+      <a class="nav-link text-dark" [routerLink]="['/losa/stat']">Statistiche</a>
+      <!-- <a class="nav-link text-dark" href="#">Pricing</a>
+      <button type="button" class="btn btn-outline-primary text-nowrap">Sign up</button> -->
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+

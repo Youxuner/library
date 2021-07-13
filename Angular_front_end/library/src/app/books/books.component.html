@@ -1,0 +1,16 @@
+<p>Books Component</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Isbn</th>
+      <th>Titolo</th>
+      <th>Categoria</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books" app-book [book] = "book" (click)="infoBook(book)">
+      <!-- ...  -->
+    </tr>
+  </tbody>
+</table>
+<br>
